@@ -5,22 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+  Route} from "react-router-dom";
+import { Button, Nav, Navbar } from 'react-bootstrap';
 import Jobfinder from './Jobfinder';
 import Skillmanager from './Skillmanager';
 import Feedback from './Feedback';
 
-
+//https://rangle.github.io/react-training/react-cardlist/
 const App = () => {
   return (
-    <div className="App">
+   <div className="App">
       <head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      </head>
+      </head> 
       <Router>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>

@@ -1,7 +1,9 @@
-import { InputLabel, Select, MenuItem, InputBase, Checkbox, FormControlLabel, CheckboxProps } from "@material-ui/core";
-import { createStyles, makeStyles, Theme, withStyles } from "@material-ui/core/styles";
+import { InputLabel, Select, MenuItem, Checkbox, FormControlLabel, CheckboxProps } from "@material-ui/core";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import React from "react";
 import FormControl from '@material-ui/core/FormControl';
+import SearchIcon from '@material-ui/icons/Search';
+import ImgMediaCard from "./ImgMediaCard";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -67,8 +69,7 @@ const Jobfinder = () => {
                                             classes: {
                                                 icon: classes.icon,
                                             },
-                                        }}
-                                    >
+                                        }}>
                                         <MenuItem value={10}>Ten</MenuItem>
                                         <MenuItem value={20}>Twenty</MenuItem>
                                         <MenuItem value={30}>Thirty</MenuItem>
@@ -132,10 +133,11 @@ const Jobfinder = () => {
                     </div>
                 </div>
                 <div style={{boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', width: 140, height: 50, marginTop: -20, backgroundColor: 'white', borderRadius: 30, display: 'flex', justifyContent: 'center', alignSelf: 'center'}}>
-                    <div style={{alignSelf: 'center'}}>Find Jobs</div>
+                    <div style={{alignSelf: 'center'}}><SearchIcon></SearchIcon>Find Jobs</div>
                 </div>
                 <div style={{ flex: 1 }}>
-                    <h2>Test</h2>
+                    
+                    <ImgMediaCard></ImgMediaCard>
                 </div>
             </div>
         </>
