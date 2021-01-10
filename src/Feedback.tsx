@@ -3,8 +3,10 @@ const Feedback = () => {
     return (
       <>
       <div style={{backgroundColor: '#303F9F', flex: 1}}>
-      <h2>Feedback</h2>
-      </div>
+      <div style={{color:'white',padding:15, textAlign:'left'}}>
+      <h2>Feedback earned in your last jobs</h2>
+    </div>
+    </div>
       <div style={{flex: 1}}>
 
       </div>
