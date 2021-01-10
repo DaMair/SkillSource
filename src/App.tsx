@@ -17,6 +17,10 @@ import Feedback from './Feedback';
 const App = () => {
   return (
     <div className="App">
+      <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      </head>
       <Router>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
