@@ -49,49 +49,49 @@ const Skillmanager = () => {
       </div>
       </div>
       <div style={{display: 'flex', flexDirection: 'row'}}>
-        <div style={{flex:1,marginLeft:30,marginRight:10,marginTop:30}}>
+        <div style={{flex:2,marginLeft:30,marginTop:30}}>
         <h2 style={{textAlign:'left',marginTop:10}}>Skills</h2>
        <Table hover >
 
   <tbody>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>Backend</td>
-      <td>3/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>UI</td>
-      <td>5/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>5/5</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>VR/AR Design</td>
-      <td>3/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>UX</td>
-      <td>2/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>2/5</td>
       <td style={{color:'red'}}>-2</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>Visual Design</td>
-      <td>3/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>App</td>
-      <td>4/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>4/5</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>Interaction</td>
-      <td>3/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
       <td style={{color:'red'}}>-1</td>
     </tr>
-    <tr>
+    <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
       <td>Web</td>
-      <td>3/5</td>
+      <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
     </tr>
   </tbody>
   </Table>
           </div>
-      <div style={{flex:2}}>
+      <div style={{flex:3}}>
       <ReactApexChart options={options} series={series} type="radar" height={800} />
       </div>
       </div>
