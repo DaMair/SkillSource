@@ -1,9 +1,9 @@
-const Jobfinder = () => {
+const Skillmanager = () => {
 
     return (
       <>
       <div style={{backgroundColor: '#303F9F', flex: 1}}>
-      <h2>Test</h2>
+      <h2>Skillmanager</h2>
       </div>
       <div style={{flex: 1}}>
 
@@ -12,5 +12,5 @@ const Jobfinder = () => {
     );
   }
   
-  export default Jobfinder;
+  export default Skillmanager;
   

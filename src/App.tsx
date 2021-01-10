@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Jobfinder from './Jobfinder';
+import Skillmanager from './Skillmanager';
+import Feedback from './Feedback';
 
 
 function App() {
@@ -17,21 +19,27 @@ function App() {
     <div className="App">
       <Router>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home"><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
+        <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Jobfinder</Nav.Link>
-            <Nav.Link href="#link">Skillmanager</Nav.Link>
-            <Nav.Link href="#link">Feedback</Nav.Link>
+            <Nav.Link href="/jobfinder">Jobfinder</Nav.Link>
+            <Nav.Link href="/skillmanager">Skillmanager</Nav.Link>
+            <Nav.Link href="/feedback">Feedback</Nav.Link>
           </Nav>
           <Button variant="outline-primary" style={{ borderColor: '#303F9F', color: '#303F9F' }} >Login</Button>
           <Button variant="primary" style={{ backgroundColor: '#303F9F', borderColor: '#303F9F', marginLeft: 15 }}>Register</Button>
         </Navbar.Collapse>
       </Navbar>
       <Switch>
-          <Route path="/about">
+          <Route path="/jobfinder">
             <Jobfinder/>
+          </Route>
+          <Route path="/skillmanager">
+            <Skillmanager/>
+          </Route>
+          <Route path="/feedback">
+            <Feedback/>
           </Route>
         </Switch>
       </Router>
