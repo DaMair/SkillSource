@@ -1,19 +1,37 @@
 import React, { useState,useCallback } from 'react';
 import ReactApexChart from "react-apexcharts";
- import Table from 'react-bootstrap/Table'
-
  import ReactDataGrid from '@inovua/reactdatagrid-community'
  import '@inovua/reactdatagrid-community/index.css'
  import skills from './skills'
 
-
- const gridStyle = { minHeight: 550 };
+ const gridStyle = {
+  minHeight: 400,
+ fontSize:22,
+ 
+ }
+ const blueStyle = {
+  color: '#303F9F',
+  fontWeight:'bold',
+  
+}
+const redStyle = {
+  color: 'red'
+}
+const rowStyle = {
+  rowHeight:400
+  }
 
  const columns = [
   { name: 'id', header: 'Id', defaultVisible: false, minWidth: 100, type: 'number', editable: false },
-  { name: 'skill', header: 'skill', defaultFlex: 1, minWidth: 250 },
-  { name: 'rating', header: 'rating', defaultFlex: 1, minWidth: 250 },
-  { name: 'change', header: 'change', defaultFlex: 1, editable: false }
+  { name: 'skill', header: 'skill', defaultFlex: 1, minWidth: 250  },
+  { name: 'rating', header: 'rating', defaultFlex: 1, minWidth: 250,cellProps: { style : blueStyle }},
+  {
+     name: 'change',
+      header: 'change',
+      defaultFlex: 1,
+      editable: false,
+      cellProps: { style : redStyle }
+    },
 ];
 
 const Skillmanager = () => {
@@ -80,6 +98,7 @@ const Skillmanager = () => {
         <ReactDataGrid
         idProperty="id"
         style={gridStyle}
+        rowStyle={rowStyle}
         onEditComplete={onEditComplete}
         editable={true}
         columns={columns}
