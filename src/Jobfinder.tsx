@@ -4,8 +4,8 @@ import React from "react";
 import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
 import ImgMediaCard from "./ImgMediaCard";
-import { getConfigFileParsingDiagnostics } from "typescript";
 import { jobs } from "./data";
+import { CardColumns, CardGroup } from "react-bootstrap";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -152,8 +152,10 @@ const Jobfinder = () => {
                 <div style={{ boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', width: 140, height: 50, marginTop: -20, backgroundColor: 'white', borderRadius: 30, display: 'flex', justifyContent: 'center', alignSelf: 'center' }}>
                     <div style={{ alignSelf: 'center' }}><SearchIcon></SearchIcon>Find Jobs</div>
                 </div>
-                <div style={{ flex: 1 }}>
-                    { getCards() }
+                <div style={{ flex: 1, display:'flex' }}>
+                    <CardGroup style={{justifyContent: 'center'}}>
+                        {getCards()}
+                    </CardGroup>
                 </div>
             </div>
         </>
