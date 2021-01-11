@@ -1,7 +1,31 @@
-import { useState } from "react";
+import React, { useState,useCallback } from 'react';
 import ReactApexChart from "react-apexcharts";
-import Table from 'react-bootstrap/Table'
+ import Table from 'react-bootstrap/Table'
+
+ import ReactDataGrid from '@inovua/reactdatagrid-community'
+ import '@inovua/reactdatagrid-community/index.css'
+ import skills from './skills'
+
+
+ const gridStyle = { minHeight: 550 };
+
+ const columns = [
+  { name: 'id', header: 'Id', defaultVisible: false, minWidth: 100, type: 'number', editable: false },
+  { name: 'skill', header: 'skill', defaultFlex: 1, minWidth: 250 },
+  { name: 'rating', header: 'rating', defaultFlex: 1, minWidth: 250 },
+  { name: 'change', header: 'change', defaultFlex: 1, editable: false }
+];
+
 const Skillmanager = () => {
+  const [dataSource, setDataSource] = useState(skills);
+
+  const onEditComplete = useCallback(({ value, columnId, rowIndex }) => {
+    const data = [...dataSource];
+    data[rowIndex] = Object.assign({}, data[rowIndex], { [columnId]: value })
+
+    setDataSource(data);
+     
+  }, [dataSource])
    const options = {
     chart: {
       height: 350,
@@ -26,19 +50,20 @@ const Skillmanager = () => {
       size: 0
     },
     xaxis: {
-      categories: ['Backend', 'UI', 'VR/AR Design', 'UX', 'Visual Design', 'App', 'Interaction','Web']
+      categories: dataSource.map(({ skill }) => skill)
     }
   };
 
  const series= 
        [{
           name: "Current",
-          data: [3, 5, 3, 2, 4, 4,3,3]
+          data: dataSource.map(({ rating }) => rating)
         },{
             name: "Previous",
             data: [3, 5, 3, 4, 4, 4,4,3]
           }];
    
+
 
     return (
       <>
@@ -49,9 +74,18 @@ const Skillmanager = () => {
       </div>
       </div>
       <div style={{display: 'flex', flexDirection: 'row'}}>
-        <div style={{flex:2,marginLeft:30,marginTop:30}}>
+        <div style={{flex:2,marginLeft:30,marginTop:30,justifyContent:'end'}}>
         <h2 style={{textAlign:'left',marginTop:10}}>Skills</h2>
-       <Table hover >
+
+        <ReactDataGrid
+        idProperty="id"
+        style={gridStyle}
+        onEditComplete={onEditComplete}
+        editable={true}
+        columns={columns}
+        dataSource={dataSource}
+      />
+       {/* <Table hover >
 
   <tbody>
     <tr style={{ lineHeight: 3, minHeight: 3, height: 3}}>
@@ -89,7 +123,7 @@ const Skillmanager = () => {
       <td style={{color:'#303F9F',fontWeight:'bold'}}>3/5</td>
     </tr>
   </tbody>
-  </Table>
+  </Table> */}
           </div>
       <div style={{flex:3}}>
       <ReactApexChart options={options} series={series} type="radar" height={800} />
