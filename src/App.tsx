@@ -10,6 +10,7 @@ import { Button, Nav, Navbar } from 'react-bootstrap';
 import Jobfinder from './Jobfinder';
 import Skillmanager from './Skillmanager';
 import Feedback from './Feedback';
+import { jobs } from './data';
 
 //https://rangle.github.io/react-training/react-cardlist/
 const App = () => {

@@ -4,6 +4,8 @@ import React from "react";
 import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
 import ImgMediaCard from "./ImgMediaCard";
+import { getConfigFileParsingDiagnostics } from "typescript";
+import { jobs } from "./data";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -49,6 +51,21 @@ const Jobfinder = () => {
     const handleCheckBoxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
+
+    const getCards = () => {
+        const cardViews = [];
+        for (const job of jobs) {
+            const cardView = (
+                <div>
+                    <ImgMediaCard description={job.description} title={job.title} skills={job.skills} />
+                </div>
+            );
+            cardViews.push(cardView);
+        }
+        return cardViews;
+
+    };
+
 
     return (
         <>
@@ -132,12 +149,11 @@ const Jobfinder = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', width: 140, height: 50, marginTop: -20, backgroundColor: 'white', borderRadius: 30, display: 'flex', justifyContent: 'center', alignSelf: 'center'}}>
-                    <div style={{alignSelf: 'center'}}><SearchIcon></SearchIcon>Find Jobs</div>
+                <div style={{ boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', width: 140, height: 50, marginTop: -20, backgroundColor: 'white', borderRadius: 30, display: 'flex', justifyContent: 'center', alignSelf: 'center' }}>
+                    <div style={{ alignSelf: 'center' }}><SearchIcon></SearchIcon>Find Jobs</div>
                 </div>
                 <div style={{ flex: 1 }}>
-                    
-                    <ImgMediaCard></ImgMediaCard>
+                    { getCards() }
                 </div>
             </div>
         </>
