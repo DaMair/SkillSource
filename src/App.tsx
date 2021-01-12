@@ -11,6 +11,8 @@ import Jobfinder from './Jobfinder';
 import Skillmanager from './Skillmanager';
 import Feedback from './Feedback';
 import { jobs } from './data';
+import Login from './Login';
+import Register from './Register';
 
 //https://rangle.github.io/react-training/react-cardlist/
 const App = () => {
@@ -30,8 +32,8 @@ const App = () => {
               <Nav.Link href="/skillmanager">Skillmanager</Nav.Link>
               <Nav.Link href="/feedback">Feedback</Nav.Link>
             </Nav>
-            <Button variant="outline-primary" style={{ borderColor: '#303F9F', color: '#303F9F' }} >Login</Button>
-            <Button variant="primary" style={{ backgroundColor: '#303F9F', borderColor: '#303F9F', marginLeft: 15 }}>Register</Button>
+            <Button variant="outline-primary" style={{ borderColor: '#303F9F', color: '#303F9F' }} href="/login">Login</Button>
+            <Button variant="primary" style={{ backgroundColor: '#303F9F', borderColor: '#303F9F', marginLeft: 15 }} href="/register">Register</Button>
           </Navbar.Collapse>
         </Navbar>
         <Switch>
@@ -43,6 +45,12 @@ const App = () => {
           </Route>
           <Route path="/feedback">
             <Feedback />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
         </Switch>
       </Router>
