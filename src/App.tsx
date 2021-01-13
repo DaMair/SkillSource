@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Switch,Redirect,
   Route} from "react-router-dom";
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import Jobfinder from './Jobfinder';
@@ -24,6 +24,7 @@ const App = () => {
       </head> 
       <Router>
         <Navbar bg="light" expand="lg">
+   
           <Navbar.Brand href="/jobfinder"><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -37,6 +38,9 @@ const App = () => {
           </Navbar.Collapse>
         </Navbar>
         <Switch>
+          <Route exact path="/">
+           <Redirect to="/jobfinder" />
+          </Route>
           <Route path="/jobfinder">
             <Jobfinder />
           </Route>
