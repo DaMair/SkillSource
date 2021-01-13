@@ -24,7 +24,7 @@ const App = () => {
       </head> 
       <Router>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
+          <Navbar.Brand href="/jobfinder"><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
